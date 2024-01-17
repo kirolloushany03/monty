@@ -12,7 +12,7 @@ int main(int ac, char **av)
 {
 	FILE *file;
 	char line[256];
-	char *command;
+	/*char *command;*/
 	char *arg;
 	stack_t *head = NULL;
 
