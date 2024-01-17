@@ -11,14 +11,14 @@
 int main(int ac, char **av)
 {
 	FILE *file;
+	int line_number = 1;
 	char line[256];
-	/*char *command;*/
 	char *arg;
 	stack_t *head = NULL;
 
-	if (ac != 2)
+	if (ac < 2)
 	{
-		fprintf(stderr, "Usage: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(av[1], "r");
@@ -31,21 +31,21 @@ int main(int ac, char **av)
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		arg = strtok(line, " $");
-		while (arg != NULL)
+		if (strstr(arg, "push") != NULL)
 		{
-			if (strstr(arg, "push") != NULL)
-			{
-				arg = strtok(NULL, " $");
-				push(&head, atoi(arg));
-			}
-			else if (strstr(arg, "pall") != NULL)
-			{
-				pall(&head);
-				arg = strtok(NULL, " $");
-			}
-			else
-				arg = strtok(NULL, " $");
+			arg = strtok(NULL, " $");
+			push(&head, atoi(arg));
 		}
+		else if (strstr(arg, "pall") != NULL)
+		{
+			pall(&head);
+		}
+		else
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
+			exit(EXIT_FAILURE);
+		}
+		line_number++;
 	}
 	fclose(file);
 	return (0);
