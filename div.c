@@ -18,9 +18,10 @@
 void divide(stack_t **head, int line_number)
 {
 	stack_t *top, *next;
-	int result = 0;
+	double result = 0.0;
+	/*int result = 0;*/
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (!head || *head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
@@ -32,7 +33,8 @@ void divide(stack_t **head, int line_number)
 	}
 	top = *head;
 	next = top->next;
-	result = top->n / next->n;
+	result = (double)top->n / next->n; /*new for the floating after the div*/
 	next->n = result;
 	pop(head, line_number);
+	(*head)->n = result; /*new*/
 }
