@@ -11,6 +11,7 @@
  * If the stack contains fewer than two elements or if the top element is
  * zero, it prints an error message and exits the program.
  * Return:
+ * This function does not return a value. It modifies the stack in place
 */
 
 void divide(stack_t **head, int line_number)
