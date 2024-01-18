@@ -9,6 +9,7 @@
  * replaces the second element with the result. If the stack contains fewer
  * than two elements, it prints an error message and exits the program.
  * Return:
+ * This function does not return a value. It modifies the stack in place
 */
 
 void add(stack_t **head, int line_number)
