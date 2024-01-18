@@ -3,7 +3,7 @@
 /**
  * add - Adds the top two elements of the stack.
  * @head: Double pointer to the head of the stack.
- * @line_number: line number
+ * @line_number: The line number in the Monty file
 */
 
 void add(stack_t **head, int line_number)
