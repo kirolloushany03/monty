@@ -13,22 +13,17 @@
  */
 void mod(stack_t **head, unsigned int line_number)
 {
-	int result;
+	stack_t *top, *next;
+	int result = 0;
 
-	if (!head || !*head || !((*head)->next))
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't mod, head too short\n", line_number);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
-		return;
 	}
-	if (((*head)->n) == 0)
-	{
-		fprintf(stderr, "L%d: division by zero\n", line_number);
-		exit(EXIT_FAILURE);
-		return;
-	}
-
-	result = ((*head)->next->n) % ((*head)->n);
-	pop(head, line_number);/*For top node*/
-	(*head)->n = result;
+	top = *head;
+	next = top->next;
+	result = next->n % top->n;
+	next->n = result;
+	pop(head, line_number);
 }
