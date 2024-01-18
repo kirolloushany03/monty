@@ -5,6 +5,8 @@
  * @ac: number of command-line  arguments
  * @av: An array of strings containing the command-line arguments.
  *
+ * Description:
+ * This function serves as the entry point for the Monty interpreter program.
  * Return: 0 if success, -1 otherwise
 */
 
