@@ -7,6 +7,7 @@
  * @line_number: The line number in the Monty file where the operation occurs.
  * Description:
  * This function divides the value of the second element of the stack by
+ * the value of the top element and replaces the second element with the result.
 */
 
 void divide(stack_t **head, int line_number)
