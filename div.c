@@ -10,6 +10,7 @@
  * the value of the top element and replaces the second element
  * If the stack contains fewer than two elements or if the top element is
  * zero, it prints an error message and exits the program.
+ * Return:
 */
 
 void divide(stack_t **head, int line_number)
