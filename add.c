@@ -6,6 +6,7 @@
  * @line_number: The line number in the Monty file where the operation occurs.
  * Description:
  * This function adds the values of the top two elements of the stack and
+ * replaces the second element with the result. If the stack contains fewer
 */
 
 void add(stack_t **head, int line_number)
