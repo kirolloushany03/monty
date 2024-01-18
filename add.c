@@ -4,6 +4,7 @@
  * add - Adds the top two elements of the stack.
  * @head: Double pointer to the head of the stack.
  * @line_number: The line number in the Monty file where the operation occurs.
+ * Description:
 */
 
 void add(stack_t **head, int line_number)
