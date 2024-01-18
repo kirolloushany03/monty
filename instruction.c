@@ -24,6 +24,8 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 		pint(head, line_number);
 	else if (strcmp(arg, "pop") == 0)
 		pop(head, line_number);
+	else if (strcmp(arg, "swap") == 0)
+		swap(head, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);

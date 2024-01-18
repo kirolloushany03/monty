@@ -42,5 +42,6 @@ void free_stack(stack_t **head);
 void pint(stack_t **head, int line_number);
 void instruction(char *arg, char *line, stack_t **head, int line_number);
 void pop(stack_t **head, int line_number);
+void swap(stack_t **head, int line_number);
 
 #endif
