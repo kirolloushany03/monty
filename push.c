@@ -13,20 +13,6 @@ void push(stack_t **head, char *arg, int line_number)
 	int n;
 	char *temp = arg;
 
-	if (*temp == '\0')
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	while ((*temp) != '\0')
-	{
-		if (!isdigit(*temp))
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
-		temp++;
-	}
 	n = atoi(arg);
 
 	new = malloc(sizeof(stack_t));
