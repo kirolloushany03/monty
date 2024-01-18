@@ -30,6 +30,8 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 		return;
 	else if (strcmp(arg, "add") == 0)
 		add(head, line_number);
+	else if (strcmp(arg, "sub") == 0)
+		sub(head, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
