@@ -16,13 +16,12 @@ int main(int ac, char **av)
 	char *arg;
 	stack_t *head = NULL;
 
-	if (ac < 2)
+	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(av[1], "r");
-
 	if (file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
@@ -30,16 +29,16 @@ int main(int ac, char **av)
 	}
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
-		arg = strtok(line, " $");
-		if (strstr(arg, "push") != NULL)
+		arg = strtok(line, " \n\t\v\f\r$");
+		if (!arg)
+			continue;
+		if (strcmp(arg, "push") == 0)
 		{
 			arg = strtok(NULL, " $");
 			push(&head, atoi(arg));
 		}
-		else if (strstr(arg, "pall") != NULL)
-		{
+		else if (strcmp(arg, "pall") == 0)
 			pall(&head);
-		}
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
