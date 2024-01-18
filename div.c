@@ -9,6 +9,7 @@
  * This function divides the value of the second element of the stack by
  * the value of the top element and replaces the second element
  * If the stack contains fewer than two elements or if the top element is
+ * zero, it prints an error message and exits the program.
 */
 
 void divide(stack_t **head, int line_number)
