@@ -12,6 +12,7 @@
  * zero, it prints an error message and exits the program.
  * Return:
  * This function does not return a value. It modifies the stack in place
+ * and exits the program if an error occurs.
 */
 
 void divide(stack_t **head, int line_number)
