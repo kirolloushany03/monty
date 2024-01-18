@@ -7,6 +7,7 @@
  *
  * Description:
  * This function serves as the entry point for the Monty interpreter program.
+ * It reads Monty bytecode instructions from a specified file, executes
  * Return: 0 if success, -1 otherwise
 */
 
