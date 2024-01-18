@@ -33,6 +33,6 @@ void divide(stack_t **head, unsigned int line_number)
 	}
 
 	result = ((*head)->next->n) / ((*head)->n);
+	(*head)->next->n = result;
 	pop(head, line_number);/*For top node*/
-	(*head)->n = result;
 }
