@@ -39,5 +39,8 @@ void (*f)(stack_t **stack, unsigned int line_number);
 void push(stack_t **head, int n);
 void pall(stack_t **head);
 void free_stack(stack_t **head);
+void pint(stack_t **head, int line_number);
+void instruction(char *arg, char *line, stack_t **head, int line_number);
+
 
 #endif
