@@ -13,7 +13,7 @@ int main(int ac, char **av)
 	FILE *file;
 	int line_number = 1;
 	char line[256];
-	char *arg = NULL;
+	char *arg;
 	stack_t *head = NULL;
 
 	if (ac != 2)
@@ -29,7 +29,24 @@ int main(int ac, char **av)
 	}
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
-		instruction(arg, line, &head, line_number);
+		arg = strtok(line, " \n\t\v\f\r$");
+		if (!arg)
+			continue;
+		if (strcmp(arg, "push") == 0)
+		{
+			arg = strtok(NULL, " $");
+			push(&head, atoi(arg));
+		}
+		else if (strcmp(arg, "pall") == 0)
+			pall(&head);
+		else if (strcmp(arg, "pint") == 0)
+			pint(&head, line_number);
+		else
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
+			exit(EXIT_FAILURE);
+		}
+		line_number++;
 	}
 	fclose(file);
 	free_stack(&head);
