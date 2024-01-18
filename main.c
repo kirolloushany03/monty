@@ -3,7 +3,7 @@
 /**
  * main - Entry point for the Monty interpreter program.
  * @ac: number of command-line  arguments
- * @av: array of arguments
+ * @av: An array of strings containing the command-line arguments.
  *
  * Return: 0 if success, -1 otherwise
 */
