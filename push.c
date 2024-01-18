@@ -11,7 +11,6 @@ void push(stack_t **head, char *arg, int line_number)
 {
 	stack_t *new;
 	int n;
-	char *temp = arg;
 
 	n = atoi(arg);
 
