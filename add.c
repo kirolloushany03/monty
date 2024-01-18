@@ -2,7 +2,7 @@
 
 /**
  * add - Adds the top two elements of the stack.
- * @head: the stack
+ * @head: Double pointer to the head of the stack.
  * @line_number: line number
 */
 
