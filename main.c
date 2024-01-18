@@ -35,11 +35,6 @@ int main(int ac, char **av)
 		if (strcmp(arg, "push") == 0)
 		{
 			arg = strtok(NULL, " $");
-			if (!arg || sizeof(arg) != sizeof(int))
-			{
-				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-				exit(EXIT_FAILURE);
-			}
 			push(&head, atoi(arg));
 		}
 		else if (strcmp(arg, "pall") == 0)
