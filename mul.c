@@ -12,7 +12,7 @@ void mul(stack_t **head, int line_number)
 {
 	stack_t *top;
 	stack_t *second;
-	int result;
+	int result = 0;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -21,7 +21,7 @@ void mul(stack_t **head, int line_number)
 	}
 	top = *head;
 	second = top->next;
-	result = top->n * second->n;
+	result = (top->n) * (second->n);
 	second->n = result;
 	pop(head, line_number);
 }
