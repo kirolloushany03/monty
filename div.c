@@ -3,7 +3,7 @@
 /**
  * divide - Divides the second element by the top element of the stack
  * the top element
- * @head: the stack
+ * @head: Double pointer to the head of the stack.
  * @line_number: line number
 */
 
