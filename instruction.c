@@ -28,6 +28,8 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 		swap(head, line_number);
 	else if (strcmp(arg, "add") == 0)
 		add(head, line_number);
+	else if (strcmp(arg, "nop") == 0)
+		add(head, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
