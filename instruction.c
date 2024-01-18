@@ -16,7 +16,7 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 	if (strcmp(arg, "push") == 0)
 	{
 		arg = strtok(NULL, " $");
-		push(head, atoi(arg));
+		push(head, arg, line_number);
 	}
 	else if (strcmp(arg, "pall") == 0)
 		pall(head);

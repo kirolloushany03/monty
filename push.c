@@ -3,12 +3,21 @@
 /**
  * push - adds an element to the stack
  * @head: the stack
- * @n: data of the new element
+ * @arg: data of the new element
+ * @line_number: line number
 */
 
-void push(stack_t **head, int n)
+void push(stack_t **head, char *arg, int line_number)
 {
 	stack_t *new;
+	int n;
+
+	if (!arg)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	n = atoi(arg);
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
