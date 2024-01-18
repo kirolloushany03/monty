@@ -8,6 +8,7 @@
  * This function adds the values of the top two elements of the stack and
  * replaces the second element with the result. If the stack contains fewer
  * than two elements, it prints an error message and exits the program.
+ * Return:
 */
 
 void add(stack_t **head, int line_number)
