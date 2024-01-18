@@ -11,17 +11,16 @@
 void mul(stack_t **head, int line_number)
 {
 	stack_t *top;
-	stack_t *second;
 	int result = 0;
 
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	top = *head;
-	second = top->next;
-	result = (top->n) * (second->n);
-	second->n = result;
-	pop(head, line_number);
+	top = (*head)->next;
+	result = (top->n) * (top->prev->n);
+	top->n = result;
+	free(top->prev);
+	top->prev = NULL;
 }
