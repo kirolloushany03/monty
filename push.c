@@ -39,6 +39,13 @@ void push(stack_t **head, char *arg, int line_number)
 	*head = new;
 }
 
+/**
+ * is_integer - checks if string is integer
+ * @str: str
+ *
+ * Return: 0 if not integer, 1 if integer
+*/
+
 int is_integer(const char *str)
 {
 	int i = 0;
