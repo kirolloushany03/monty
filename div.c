@@ -6,6 +6,7 @@
  * @head: Double pointer to the head of the stack.
  * @line_number: The line number in the Monty file where the operation occurs.
  * Description:
+ * This function divides the value of the second element of the stack by
 */
 
 void divide(stack_t **head, int line_number)
