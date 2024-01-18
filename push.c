@@ -13,7 +13,7 @@ void push(stack_t **head, int n)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		perror("Error: malloc failed");
+		perror("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = n;
