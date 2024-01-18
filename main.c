@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point for the Monty interpreter program.
- * @ac: number of arguments
+ * @ac: number of command-line  arguments
  * @av: array of arguments
  *
  * Return: 0 if success, -1 otherwise
