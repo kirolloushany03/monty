@@ -34,6 +34,8 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 		sub(head, line_number);
 	else if (strcmp(arg, "div") == 0)
 		divide(head, line_number);
+	else if (strcmp(arg, "mod") == 0)
+		mod(head, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
