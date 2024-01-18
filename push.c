@@ -13,7 +13,7 @@ void push(stack_t **head, char *arg, int line_number)
 	int n;
 	char *temp = arg;
 
-	if (*temp == '\0' || is_integer(arg) == 0)
+	if (*temp == '\0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -37,31 +37,4 @@ void push(stack_t **head, char *arg, int line_number)
 	}
 	new->next = *head;
 	*head = new;
-}
-
-/**
- * is_integer - checks if string is integer
- * @str: str
- *
- * Return: 0 if not integer, 1 if integer
-*/
-
-int is_integer(const char *str)
-{
-	int i = 0;
-
-	if (str == NULL || *str == '\0')
-		return (0);
-
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-
-	while (str[i] != '\0')
-	{
-		if (!isdigit(str[i]))
-			return (0);
-		i++;
-	}
-
-	return (1);
 }
