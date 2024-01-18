@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * main - Entry point
+ * main - Entry point for the Monty interpreter program.
  * @ac: number of arguments
  * @av: array of arguments
  *
