@@ -14,7 +14,7 @@ void mul(stack_t **head, int line_number)
 	stack_t *second;
 	int result = 0;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
