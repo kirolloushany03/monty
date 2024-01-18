@@ -4,7 +4,7 @@
  * divide - Divides the second element by the top element of the stack
  * the top element
  * @head: Double pointer to the head of the stack.
- * @line_number: line number
+ * @line_number: The line number in the Monty file where the operation occurs.
 */
 
 void divide(stack_t **head, int line_number)
