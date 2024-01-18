@@ -47,5 +47,7 @@ int main(int ac, char **av)
 		line_number++;
 	}
 	fclose(file);
+	free_stack(&head);
+	head = NULL;
 	return (0);
 }
