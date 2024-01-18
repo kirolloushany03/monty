@@ -22,10 +22,11 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 		pall(head);
 	else if (strcmp(arg, "pint") == 0)
 		pint(head, line_number);
+	else if (strcmp(arg, "pop") == 0)
+		pop(head, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
 		exit(EXIT_FAILURE);
 	}
-	line_number++;
 }
