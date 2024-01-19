@@ -12,6 +12,7 @@ void push(stack_t **head, char *arg, int line_number)
 	stack_t *new;
 	int n;
 	char *temp = arg;
+	char *int_end;
 
 	while (*temp != '\0' && isspace((unsigned char)*temp))
 		temp++;
@@ -22,7 +23,13 @@ void push(stack_t **head, char *arg, int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	n = atoi(arg);
+	n = strtol(arg, &int_end, 10);
+
+	if (*int_end != '\0' && !isspace((unsigned char)*int_end))
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
