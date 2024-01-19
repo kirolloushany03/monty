@@ -13,6 +13,9 @@ void push(stack_t **head, char *arg, int line_number)
 	int n;
 	char *temp = arg;
 
+	while (*temp != '\0' && isspace((unsigned char)*temp))
+		temp++;
+
 	if (*temp == '\0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
