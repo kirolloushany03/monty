@@ -24,7 +24,7 @@ void mod(stack_t **head, unsigned int line_number)
 	}
 	current = *head;
 	second = current->next;
-	if (second->n == 0)
+	if (current->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
