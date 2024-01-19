@@ -38,6 +38,8 @@ void instruction(char *arg, char *line, stack_t **head, int line_number)
 		divide(head, line_number);
 	else if (strcmp(arg, "mod") == 0)
 		mod(head, line_number);
+	else if (strcmp(arg, "mul") == 0)
+		mul(head, line_number);
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg);
